@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>로그인 테스트</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f4f8;
+      display: grid;
+      place-items: center;
+      min-height: 90vh;
+    }
+
+    .login-box {
+      background: white;
+      padding: 28px;
+      border-radius: 12px;
+      width: 280px;
+      box-shadow: 0 4px 16px #0001;
+    }
+
+    input, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+    }
+
+    button {
+      background: #2864dc;
+      color: white;
+      border: 0;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>로그인 테스트</h2>
+
+    <form id="loginForm">
+      <input
+        type="text"
+        placeholder="테스트 아이디"
+        autocomplete="off"
+        required
+      >
+
+      <input
+        type="password"
+        placeholder="테스트 비밀번호"
+        autocomplete="off"
+        required
+      >
+
+      <button type="submit">테스트 로그인</button>
+    </form>
+
+    <p id="message" role="status"></p>
+  </div>
+
+  <script>
+    document.getElementById("loginForm")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        document.getElementById("message").textContent =
+          "테스트 성공! 입력값은 저장하거나 전송하지 않았습니다.";
+
+        this.reset();
+      });
+  </script>
+</body>
+</html>
